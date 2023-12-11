@@ -1,5 +1,7 @@
 # Consent Mode - Laboratorio Supervielle
 
+Adaptado a la imagen del banco
+
 ## Implementaciones Básicas
 
 -Angular cli

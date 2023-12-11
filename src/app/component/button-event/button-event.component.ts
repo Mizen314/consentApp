@@ -10,9 +10,11 @@ export class ButtonEventComponent {
   shotEvent() {
       const analytics = getAnalytics()
       logEvent(analytics, 'click',{
-        'click_event': 'button',
+        'click_type': 'button',
         'click_detail': "test",
-        'flow': "Casa"
+        'flow': "Laboratorio test"
       })
     }
 }
+
+

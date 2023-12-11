@@ -1,0 +1,50 @@
+.navbar-expand-lg .navbar-collapse {
+    display: flex!important;
+    justify-content: space-evenly;
+    border-bottom: 0.2px solid gainsboro;
+    margin-bottom: 20px;
+}
+
+.navbar-expand-lg .navbar-collapse ul {
+    justify-content: space-evenly;
+    width: 50%;
+    font-size: 12px;
+}
+.menu-izq {
+    display: flex;
+    justify-content: left;
+    gap: 0px;
+    margin-top: 20px;
+}
+.menu-izq p {
+    margin-top: 10px;
+}
+
+.container {
+    height: 100px;  
+;}
+
+.logo {
+    margin-top: 10px;
+}
+
+.menu-der {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+svg{
+    margin-top: 10px;
+    margin-right: 30px;
+    font-weight: bold;
+}
+
+button {
+    margin-top: 3px;
+    height: 36px;
+    width: 120px;
+    font-size: 12px;
+
+}

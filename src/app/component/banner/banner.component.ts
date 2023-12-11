@@ -32,10 +32,11 @@ export class BannerComponent {
     )
     const analytics = getAnalytics()
     logEvent(analytics, 'click',{
-      'click_event': 'button',
+      'click_type': 'button',
       'click_detail': "Aceptar consentimiento",
       'flow': "consent"
     })
+    setUserId(analytics,"123456")
     
   }
 
@@ -48,12 +49,13 @@ export class BannerComponent {
     })
     console.log(this.marketing, this.analytics)
     const analytics = getAnalytics()
-    setUserId(analytics, "1234")
     logEvent(analytics, 'click',{
-      'click_event': 'button',
-      'click_detail': "Aceptar seleccion",
+      'click_type': 'button',
+      'click_detail': "Aceptar selección",
       'flow': "consent"
     })
+    setUserId(analytics,"22314")
+
   }
   rechazarTodo() { 
     setConsent(
@@ -66,10 +68,12 @@ export class BannerComponent {
     )
     const analytics = getAnalytics()
       logEvent(analytics, 'click',{
-        'click_event': 'button',
+        'click_type': 'button',
         'click_detail': "rechazar consentimiento",
         'flow': "consent"
       })
+      setUserId(analytics,"33456")
+
   }
 
 }

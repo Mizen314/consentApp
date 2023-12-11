@@ -1,0 +1,10 @@
+.buttons {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+.titulo-simulador {
+    text-align: center;
+    margin-top: 30px;
+    margin-bottom: 20px;
+}

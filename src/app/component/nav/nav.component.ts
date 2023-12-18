@@ -8,11 +8,9 @@ import { LocalstorageService } from 'src/app/services/localstorage.service';
   styleUrls: ['./nav.component.css']
 })
 export class NavComponent {
-  
   @Output() displayBanner = new EventEmitter<boolean>();
 
   showBanner(){
     this.displayBanner.emit(true);
   }
-
 }

@@ -9,7 +9,6 @@ import { LocalstorageService } from './services/localstorage.service';
 })
 export class AppComponent {
   title = 'Supervielle Laboratorio Consent Mode';
-
   showBanner = false;
 
   constructor(private localStorageService: LocalstorageService) { }
@@ -39,8 +38,7 @@ export class AppComponent {
   }
 
   cerrarBanner($event: boolean) {
-    this.showBanner = $event;
-    
+    this.showBanner = $event;  
   }
   mostrarBanner($event: boolean) {
     this.showBanner ? console.log("consentimiento aceptado") : alert('Los cambios se actualizarán a partir del próximo inicio de sesión')

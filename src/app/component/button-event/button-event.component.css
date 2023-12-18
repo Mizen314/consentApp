@@ -1,0 +1,9 @@
+.container {
+    margin-top: 2.5rem;
+    display: flex;
+    gap: 2rem;
+}
+.btn-primary{
+    background-color: #dc3545;
+    border-color: #dc3545
+}

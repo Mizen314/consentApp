@@ -1,90 +1,56 @@
-<div class="banner-container">
-        <button type="button" class="btn btn-outline-danger" data-bs-toggle="modal" data-bs-target="#exampleModal">
-        Simulacion de LogIn
+<div class="bannerContainer">
+  <div class="bannerBody">
+    <div class="header">
+        <h1>Modo de Consentimiento</h1>
+      </div>
+    <div class="form-check form-switch formTitle">
+      <input class="form-check-input" type="checkbox" role="switch" id="marketing" [(ngModel)]="marketing"  />
+      <label class="form-check-label" for="marketing">Cookies de publicidad personalizada</label>
+      <p class="consent-text">
+        Nos permiten entender tus preferencias para mostrarte anuncios
+        interesantes para ti. Si las desactivas, estarías eliminando una de
+        las fuentes de información que usamos para personalizar los
+        anuncios.
+      </p>
+    </div>
+    <div class="form-check form-switch">
+      <input class="form-check-input" type="checkbox" role="switch" id="analytics" [(ngModel)]="analytics"  />
+      <label class="form-check-label" for="analytics">Cookies de Analytics</label>
+      <p class="consent-text">
+        Nos permiten obtener información para actualizar nuestra app y, de esta manera, adaptarla a tus
+        necesidades.
+      </p>
+    </div>
+    <div class="form-check form-switch">
+      <input class="form-check-input" type="checkbox" role="switch" id="funcionality" [(ngModel)]="funcionality"  />
+      <label class="form-check-label" for="funcionality">Cookies de rendimiento</label>
+      <p class="consent-text">Nos permiten optimizar algunas funciones de nuestro sitio. Si las
+        desactivas, podrías ver cambios en la velocidad o resolución.</p>
+    </div>
+    <div class="form-check form-switch">
+      <input class="form-check-input" type="checkbox" role="switch" id="preferences"  [(ngModel)]="preferences"  />
+      <label class="form-check-label" for="preferences">Cookies Funcionales</label>
+      <p class="consent-text">
+        Nos permiten mantener el buen funcionamiento de nuestro sitio. Si
+        las desactivas, podrías presentar cambios en tu navegación.
+      </p>
+    </div>
+  </div>
+  <div class="bannerfooter">
+    <button type="button" class="btn btn-success" (click)="aceptarTodo()">
+      Aceptar Todo
     </button>
+    <button type="button" class="btn btn-outline-success"  (click)="aceptarSeleccionados($event)">
+      Aceptar selección
+    </button>
+    <button type="button" class="btn btn-danger" (click)="rechazarTodo()">
+      Rechazar Todo
+    </button>
+  </div>
 </div>
 
 
-<!-- Button trigger modal -->
-  
-  <!-- Modal -->
-  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header gap-2">
-          <h1 class="modal-title fs-5" id="exampleModalLabel">
-            <span><img height="80px" width="120px"
-                src="data:image/png;base64,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"
-                alt="logo_supervielle" /></span>
-            Modelo de Consentimiento
-          </h1>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-          <!-- Se dejan estas esenciales en caso de que se requieran agregar en algun momento-->
-          <!-- <div class="form-check form-switch">
-            <input class="form-check-input" type="checkbox" role="switch" id="esenciales" checked disabled />
-            <label class="form-check-label" for="esenciales">Cookies Esenciales</label>
-            <p>
-              Sirven para reconocerte cuando ingresás, guardar tus preferencias de
-              configuración y proteger tu cuenta. No pueden deshabilitarse porque
-              son necesarias para el funcionamiento de nuestro sitio.
-            </p>
-          </div> -->
-          <div class="form-check form-switch">
-            <input class="form-check-input" type="checkbox" role="switch" id="marketing" [(ngModel)]="marketing"  />
-            <label class="form-check-label" for="marketing">Cookies de publicidad personalizada</label>
-            <p>
-              Nos permiten entender tus preferencias para mostrarte anuncios
-              interesantes para ti. Si las desactivas, estarías eliminando una de
-              las fuentes de información que usamos para personalizar los
-              anuncios.
-            </p>
-          </div>
-          <div class="form-check form-switch">
-            <input class="form-check-input" type="checkbox" role="switch" id="analytics" [(ngModel)]="analytics"  />
-            <label class="form-check-label" for="analytics">Cookies de Analytics</label>
-            <p>
-              Nos permiten obtener información para actualizar nuestra app y, de esta manera, adaptarla a tus
-              necesidades.
-            </p>
-          </div>
-          <div class="form-check form-switch">
-            <input class="form-check-input" type="checkbox" role="switch" id="funcionality" [(ngModel)]="funcionality"  />
-            <label class="form-check-label" for="funcionality">Cookies de rendimiento</label>
-            <p class="form-check">Nos permiten optimizar algunas funciones de nuestro sitio. Si las
-              desactivas, podrías ver cambios en la velocidad o resolución.</p>
-          </div>
-          <div class="form-check form-switch">
-            <input class="form-check-input" type="checkbox" role="switch" id="preferences"  [(ngModel)]="preferences"  />
-            <label class="form-check-label" for="preferences">Cookies Funcionales</label>
-            <p>
-              Nos permiten mantener el buen funcionamiento de nuestro sitio. Si
-              las desactivas, podrías presentar cambios en tu navegación.
-            </p>
-          </div>
-                  <!--Test-->
-                  <!-- <div class="form-check form-switch">
-                    <p>Marketing - {{marketing}}</p>
-                    <p>Analytics - {{analytics}}</p>
-                    <p>Funcionalidad - {{funcionality}}</p>
-                    <p>Preferencias - {{preferences}}</p>
-                </div> -->
-                <!--Test-->
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-success" data-bs-dismiss="modal" (click)="aceptarTodo()">
-            Aceptar Todo
-          </button>
-          <button type="button" class="btn btn-outline-success" data-bs-dismiss="modal" (click)="aceptarSeleccionados($event)">
-            Aceptar selección
-          </button>
-          <button type="button" class="btn btn-danger" data-bs-dismiss="modal" (click)="rechazarTodo()">
-            Rechazar Todo
-          </button>
-        </div>
-      </div>
-    </div>
-  </div>
+
+
 
 
